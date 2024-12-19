@@ -33,7 +33,7 @@ print(people_records)
 def check_people(people_list: list, peopl_to_comp: list, age: int):
     check_result = True
     for i in range(len(peopl_to_comp)):
-        if people_list[peopl_to_comp[0]][2]>age:
+        if people_list[peopl_to_comp[i]][2]>age:
             continue
         else:
             check_result = False
