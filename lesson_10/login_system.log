@@ -1,0 +1,10 @@
+2025-01-15 15:25:37,069 - Login event - Username: Anna, Status: success
+2025-01-15 15:25:37,081 - Login event - Username: Petro, Status: success
+2025-01-15 15:25:37,094 - Login event - Username: Anna, Status: success
+2025-01-15 15:25:37,109 - Login event - Username: Ivan, Status: success
+2025-01-15 15:25:37,123 - Login event - Username: Olha, Status: expired
+2025-01-15 15:25:37,138 - Login event - Username: Inna, Status: expired
+2025-01-15 15:25:37,152 - Login event - Username: Andrew, Status: expired
+2025-01-15 15:25:37,164 - Login event - Username: Natalia, Status: failed
+2025-01-15 15:25:37,179 - Login event - Username: Oleh, Status: failed
+2025-01-15 15:25:37,196 - Login event - Username: Dimon, Status: failed
