@@ -25,6 +25,8 @@ jobs:
         run: |
           find . -name "__pycache__" -exec rm -rf {} +
           find . -name "*.pyc" -exec rm -rf {} +
+      - name: Install Playwright browsers
+        run: playwright install
 
       - name: Run tests
         run: pytest --html=report.html
