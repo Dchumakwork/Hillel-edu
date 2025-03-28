@@ -5,7 +5,7 @@ from homework_28to30 import QautoSource
 @pytest.fixture
 def browser():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch()
         yield browser
         browser.close()
 
