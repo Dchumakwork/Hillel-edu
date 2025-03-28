@@ -21,33 +21,25 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Install missing system libraries
+      - name: Install required system libraries
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             libgtk-4-1 \
             libgraphene-1.0-0 \
             libwoff1 \
-            libvpx-dev \
-            libevent-dev \
-            libopus-dev \
-            libgstallocators-1.0-dev \
-            libgstapp-1.0-dev \
-            libgstpbutils-1.0-dev \
-            libgstaudio-1.0-dev \
-            libgstgl-1.0-dev \
-            libgsttag-1.0-dev \
-            libgstvideo-1.0-dev \
-            libgstcodecparsers-1.0-dev \
-            libgstfft-1.0-dev \
+            libvpx6 \
+            libevent-2.1-7 \
+            libopus0 \
+            libgstreamer1.0-0 \
+            libgstreamer-plugins-base1.0-0 \
+            libgstreamer-plugins-good1.0-0 \
             libflite1 \
-            libavif-dev \
+            libavif13 \
             libharfbuzz-icu0 \
-            libsecret-1-dev \
-            libhyphen-dev \
-            libmanette-0.2-0 \
-            libgles2-mesa-dev \
-            libx264-dev
+            libsecret-1-0 \
+            libhyphen0 \
+            libgles2-mesa
 
       - name: Clean cache
         run: |
