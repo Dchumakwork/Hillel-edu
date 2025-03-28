@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: 3.11
 
       # Встановлення залежностей
       - name: Install dependencies
@@ -30,7 +30,7 @@ jobs:
 
       # Збереження HTML-звіту як артефакту
       - name: Upload test report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: report.html
