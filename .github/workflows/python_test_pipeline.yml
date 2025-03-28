@@ -1,34 +1,27 @@
-name: Python Test Pipeline
-
-on:
-  push:
-    branches:
-      - main
-
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      # Вилучення коду з репозиторію
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Налаштування Python середовища
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.11
 
-      # Встановлення залежностей
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Запуск тестів
+      - name: Clean cache
+        run: |
+          find . -name "__pycache__" -exec rm -rf {} +
+          find . -name "*.pyc" -exec rm -rf {} +
+
       - name: Run tests
         run: pytest --html=report.html
 
-      # Збереження HTML-звіту як артефакту
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
