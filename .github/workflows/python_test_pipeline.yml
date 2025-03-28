@@ -21,12 +21,40 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Install missing system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk-4-1 \
+            libgraphene-1.0-0 \
+            libwoff1 \
+            libvpx-dev \
+            libevent-dev \
+            libopus-dev \
+            libgstallocators-1.0-dev \
+            libgstapp-1.0-dev \
+            libgstpbutils-1.0-dev \
+            libgstaudio-1.0-dev \
+            libgstgl-1.0-dev \
+            libgsttag-1.0-dev \
+            libgstvideo-1.0-dev \
+            libgstcodecparsers-1.0-dev \
+            libgstfft-1.0-dev \
+            libflite1 \
+            libavif-dev \
+            libharfbuzz-icu0 \
+            libsecret-1-dev \
+            libhyphen-dev \
+            libmanette-0.2-0 \
+            libgles2-mesa-dev \
+            libx264-dev
+
       - name: Clean cache
         run: |
           find . -name "__pycache__" -exec rm -rf {} +
           find . -name "*.pyc" -exec rm -rf {} +
       - name: Install Playwright browsers
-        run: playwright install
+        run: playwright install chromium
 
       - name: Run tests
         run: pytest --html=report.html
