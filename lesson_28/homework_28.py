@@ -1,4 +1,8 @@
 from playwright.sync_api import Page
+import random
+def generate_random_number():
+    return random.randint(1, 1000)
+
 
 class QautoSource:
     def __init__(self, page: Page):
